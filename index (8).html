@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soothing Moon in Space</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle, #000428 20%, #004e92);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+        }
+
+        h1 {
+            position: absolute;
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            z-index: 10;
+        }
+
+        /* Moon Styling */
+        .moon {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, #ffffff 60%, #d1d1d1 85%, rgba(0, 0, 0, 0.2) 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 80px 40px rgba(255, 255, 255, 0.4), inset 0 0 20px 10px rgba(0, 0, 0, 0.2);
+            animation: moonGlow 5s infinite;
+        }
+
+        /* Moon Glow Animation */
+        @keyframes moonGlow {
+            0%, 100% {
+                box-shadow: 0 0 80px 40px rgba(255, 255, 255, 0.4), inset 0 0 20px 10px rgba(0, 0, 0, 0.2);
+            }
+            50% {
+                box-shadow: 0 0 100px 50px rgba(255, 255, 255, 0.6), inset 0 0 30px 15px rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        /* Craters on the Moon */
+        .crater {
+            position: absolute;
+            background: radial-gradient(circle, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
+            border-radius: 50%;
+        }
+
+        .crater1 {
+            width: 40px;
+            height: 40px;
+            top: 25%;
+            left: 35%;
+        }
+
+        .crater2 {
+            width: 25px;
+            height: 25px;
+            top: 55%;
+            left: 65%;
+        }
+
+        .crater3 {
+            width: 20px;
+            height: 20px;
+            top: 75%;
+            left: 45%;
+        }
+
+        .crater4 {
+            width: 30px;
+            height: 30px;
+            top: 40%;
+            left: 20%;
+        }
+
+        .crater5 {
+            width: 15px;
+            height: 15px;
+            top: 60%;
+            left: 50%;
+        }
+
+        /* Stars Styling */
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 2s infinite ease-in-out;
+        }
+
+        /* Shooting Stars */
+        .shooting-star {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            animation: shoot 3s linear infinite;
+        }
+
+        @keyframes shoot {
+            0% {
+                opacity: 1;
+                transform: translate(-100vw, -100vh) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(100vw, 100vh) scale(0.2);
+            }
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        /* Planet Ring */
+        .planet-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            height: 300px;
+            border: 1px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            animation: spin 10s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        /* Additional Effects */
+        .nebula {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            top: 20%;
+            left: 10%;
+            background: radial-gradient(circle, rgba(255, 0, 150, 0.2), transparent);
+            filter: blur(100px);
+            animation: nebulaMove 6s ease-in-out infinite alternate;
+        }
+
+        @keyframes nebulaMove {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(20px, -20px);
+            }
+        }
+
+        .satellite {
+            position: absolute;
+            width: 30px;
+            height: 10px;
+            background: silver;
+            border-radius: 5px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-200px, -150px) rotate(45deg);
+            animation: orbit 12s linear infinite;
+        }
+
+        @keyframes orbit {
+            0% {
+                transform: translate(-200px, -150px) rotate(0deg);
+            }
+            100% {
+                transform: translate(-200px, -150px) rotate(360deg);
+            }
+        }
+
+        .satellite:before {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #f0f0f0;
+            border-radius: 50%;
+            top: -5px;
+            left: -5px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <h1>Soothing Moon in Space</h1>
+    <div class="moon">
+        <div class="crater crater1"></div>
+        <div class="crater crater2"></div>
+        <div class="crater crater3"></div>
+        <div class="crater crater4"></div>
+        <div class="crater crater5"></div>
+    </div>
+    <div class="stars" id="stars"></div>
+    <div class="planet-ring"></div>
+    <div class="nebula"></div>
+    <div class="satellite"></div>
+
+    <script>
+        // Generate random stars
+        const starsContainer = document.getElementById('stars');
+        const starCount = 150;
+
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.top = `${Math.random() * 100}vh`;
+            star.style.left = `${Math.random() * 100}vw`;
+            star.style.animationDelay = `${Math.random() * 2}s`;
+            starsContainer.appendChild(star);
+        }
+
+        // Generate shooting stars
+        setInterval(() => {
+            const shootingStar = document.createElement('div');
+            shootingStar.className = 'shooting-star';
+            shootingStar.style.top = `${Math.random() * 50}vh`;
+            shootingStar.style.left = `${Math.random() * 50}vw`;
+            shootingStar.style.animationDuration = `${Math.random() * 2 + 1}s`;
+            document.body.appendChild(shootingStar);
+            setTimeout(() => shootingStar.remove(), 3000);
+        }, 2000);
+    </script>
+</body>
+</html>
